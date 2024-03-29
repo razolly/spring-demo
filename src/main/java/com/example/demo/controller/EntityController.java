@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @AllArgsConstructor
 public class EntityController {
@@ -16,7 +18,7 @@ public class EntityController {
 
     @GetMapping("/entity")
     public ResponseEntity<EntityProfileDto> getEntity() {
-        return new ResponseEntity<>(entityService.getEntity(), HttpStatus.OK);
+        return new ResponseEntity<>(entityService.getEntity(UUID.randomUUID()), HttpStatus.OK);
     }
 
 }
