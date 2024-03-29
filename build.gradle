@@ -64,7 +64,8 @@ jacocoTestCoverageVerification {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it,
                     // Files to exclude from test coverage report
-                    exclude: ['com/example/demo/model/**',
+                    exclude: ['com/example/demo',
+                              'com/example/demo/model/**',
                               'com/example/demo/constants/**'])
         })
     }
