@@ -23,4 +23,9 @@ public class EntityService {
         return optEntityProfile.map(e -> objectMapper.convertValue(e, EntityProfileDto.class)).orElse(null);
     }
 
+    public EntityProfileDto createEntity(EntityProfileDto entityRequest) {
+        EntityProfile saved = entityRepository.save(objectMapper.convertValue(entityRequest, EntityProfile.class));
+        return objectMapper.convertValue(saved, EntityProfileDto.class);
+    }
+
 }
