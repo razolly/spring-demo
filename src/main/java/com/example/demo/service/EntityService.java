@@ -15,6 +15,7 @@ import java.util.UUID;
 public class EntityService {
 
     private EntityRepository entityRepository;
+
     private ObjectMapper objectMapper;
 
     public EntityProfileDto getEntity(UUID entityId) {

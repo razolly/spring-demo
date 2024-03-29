@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
@@ -17,8 +18,8 @@ public class EntityController {
     private EntityService entityService;
 
     @GetMapping("/entity")
-    public ResponseEntity<EntityProfileDto> getEntity() {
-        return new ResponseEntity<>(entityService.getEntity(UUID.randomUUID()), HttpStatus.OK);
+    public ResponseEntity<EntityProfileDto> getEntity(@RequestParam String id) {
+        return new ResponseEntity<>(entityService.getEntity(UUID.fromString(id)), HttpStatus.OK);
     }
 
 }

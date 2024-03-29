@@ -1,0 +1,1 @@
+insert into tbl_entity_profile (entity_id, entity_name, entity_type) values ('7577b899-c984-4570-8910-a20e24bff518', 'Merlion Tech', 'COM');
