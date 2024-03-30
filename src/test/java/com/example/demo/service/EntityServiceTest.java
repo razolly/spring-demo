@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -50,6 +51,20 @@ class EntityServiceTest {
         when(entityRepository.findById(any())).thenReturn(Optional.empty());
         EntityProfileDto response = entityService.getEntity(UUID.randomUUID());
         assertNull(response);
+    }
+
+    @Test
+    @DisplayName("Get entity failed. Not found")
+    public void test() {
+        Map<String, UserStats> map1 =
+                Map.of("LLL", UserStats.builder().visitCount(Optional.of(100L)).build());
+        Map<String, UserStats> map2 =
+                Map.of("111", UserStats.builder().visitCount(Optional.of(300L)).build(),
+                        "222", UserStats.builder().visitCount(Optional.of(200L)).build());
+        Map<String, UserStats> map3 = Map.of("333", UserStats.builder().visitCount(Optional.of(500L)).build());
+        Map<String, UserStats> map4 = Map.of("111", UserStats.builder().visitCount(Optional.of(500L)).build());
+
+        assertNotNull(entityService.count(map1, map2, map3, map4));
     }
 
 }

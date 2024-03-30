@@ -1,0 +1,1 @@
+insert into task (id, description, priority) values (1, 'Old desc', 100);
