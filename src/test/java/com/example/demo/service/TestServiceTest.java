@@ -27,19 +27,22 @@ class TestServiceTest {
 
     @Test
     @DisplayName("""
-            GIVEN generic class is created
-            WHEN class is passed to method
-            THEN class is displayed
+            GIVEN different generic class is created
+            WHEN each class is passed to method
+            THEN different class names are displayed
             """)
     public void test_printGenericParam() {
-        var obj1 = "Hello World";
-        testService.printGenericParam(obj1);
+        var objStr = "Hello World";
+        testService.printGenericParam(objStr);
 
-        var obj2 = EntityProfileDto.builder()
+        var objEntity = EntityProfileDto.builder()
                 .entityId(UUID.randomUUID())
                 .entityType("COM")
                 .entityName("My Company").build();
-        testService.printGenericParam(obj2);
+        testService.printGenericParam(objEntity);
+
+        var objInt = 2;
+        testService.printGenericParam(objInt);
     }
 
 }

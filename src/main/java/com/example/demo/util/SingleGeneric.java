@@ -13,6 +13,7 @@ public class SingleGeneric<T> {
 
     public void printAllGenerics() {
         log.info(String.format(">>>> Generic: %s", item1));
+        log.info(String.format(">>>> Class type is: %s", item1.getClass().getName()));
     }
 
 }
