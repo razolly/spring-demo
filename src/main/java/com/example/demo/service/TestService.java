@@ -11,9 +11,14 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class TestService {
 
-    public void getGeneric() {
+    public void printSimpleGeneric() {
         var myGen = new SingleGeneric<>(EntityProfileDto.builder().build());
-        log.info(String.format("My generic object is %s", myGen));
+        myGen.printAllGenerics();
+    }
+
+    public <T> void printGenericParam(T t) {
+        var myGen = new SingleGeneric<>(t);
+        myGen.printAllGenerics();
     }
 
 }
