@@ -52,4 +52,14 @@ class EntityServiceTest {
         assertNull(response);
     }
 
+    @Test
+    @DisplayName("""
+            GIVEN generic class is created
+            WHEN logged
+            THEN class is displayed
+            """)
+    public void test_generic() {
+        entityService.getGeneric();
+    }
+
 }
