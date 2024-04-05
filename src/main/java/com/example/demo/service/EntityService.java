@@ -3,7 +3,6 @@ package com.example.demo.service;
 import com.example.demo.model.EntityProfile;
 import com.example.demo.model.dto.EntityProfileDto;
 import com.example.demo.repository.EntityRepository;
-import com.example.demo.util.SingleGeneric;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,11 +28,6 @@ public class EntityService {
     public EntityProfileDto createEntity(EntityProfileDto entityRequest) {
         EntityProfile saved = entityRepository.save(objectMapper.convertValue(entityRequest, EntityProfile.class));
         return objectMapper.convertValue(saved, EntityProfileDto.class);
-    }
-
-    public void getGeneric() {
-        var myGen = new SingleGeneric<>(EntityProfileDto.builder().build());
-        log.info(String.format("My generic object is %s", myGen));
     }
 
 }
