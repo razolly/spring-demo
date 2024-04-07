@@ -1,0 +1,2 @@
+insert into tbl_item (id, name) values ('86923c55-5e33-40e8-82a1-aa70a8661245', 'Item01');
+insert into tbl_bid (id, amount, item_id) values ('3662cd35-4a63-4e6b-b9d5-7ef347e4e7af', 100.0, '86923c55-5e33-40e8-82a1-aa70a8661245');
