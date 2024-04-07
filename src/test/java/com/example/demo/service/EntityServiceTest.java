@@ -36,7 +36,7 @@ class EntityServiceTest {
     public void test_getEntity_givenValidId_whenCalled_thenEntityReturned() {
         when(entityRepository.findById(any())).thenReturn(Optional.of(
                 EntityProfile.builder()
-                        .entityId(UUID.fromString("247d338c-df4a-4f37-ac64-ae0ba79eb21b"))
+                        .id(UUID.fromString("247d338c-df4a-4f37-ac64-ae0ba79eb21b"))
                         .entityName("Merlion Tech").build()));
         EntityProfileDto response = entityService.getEntity(UUID.randomUUID());
         assertNotNull(response);
