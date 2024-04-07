@@ -28,6 +28,8 @@ public class Bid {
      * For the join column "item_id"
      *      "item" refers to the parent class
      *      "id" refers to the primary key in the parent class
+     * The default name for the join column is ITEM_ID: Hibernate automatically uses a combination of the target
+     * entity name and its identifier property, separated with an underscore
      *
      * This field is non-nullable because a bid shouldn't exist without an item
      */

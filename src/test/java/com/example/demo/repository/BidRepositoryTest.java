@@ -29,6 +29,7 @@ class BidRepositoryTest {
     void test_unidirectional_manyToOne() {
         Optional<Bid> optBid = bidRepository.findById(UUID.fromString("3662cd35-4a63-4e6b-b9d5-7ef347e4e7af"));
         assertTrue(optBid.isPresent());
+        // Verify parent is present with correct values
         assertNotNull(optBid.get().getItem());
         assertEquals("86923c55-5e33-40e8-82a1-aa70a8661245", optBid.get().getItem().getId().toString());
         assertEquals("Item01", optBid.get().getItem().getName());
