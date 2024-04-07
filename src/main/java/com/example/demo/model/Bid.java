@@ -23,8 +23,14 @@ public class Bid {
 
     private Double amount;
 
+    /*
+     * Note: creating a new field called itemId will cause issues
+     * For the join column "item_id"
+     *      "item" refers to the parent class
+     *      "id" refers to the primary key in the parent class
+     */
     @ManyToOne
-    @JoinColumn(name = "item_id") // Note: creating a new field called itemId will cause issues
+    @JoinColumn(name = "item_id", nullable = false)
     private Item item;
 
 }
