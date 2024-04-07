@@ -28,8 +28,10 @@ public class Bid {
      * For the join column "item_id"
      *      "item" refers to the parent class
      *      "id" refers to the primary key in the parent class
+     *
+     * This field is non-nullable because a bid shouldn't exist without an item
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id", nullable = false)
     private Item item;
 
