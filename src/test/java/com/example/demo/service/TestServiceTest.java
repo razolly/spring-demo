@@ -36,7 +36,7 @@ class TestServiceTest {
         testService.printGenericParam(objStr);
 
         var objEntity = EntityProfileDto.builder()
-                .entityId(UUID.randomUUID())
+                .id(UUID.randomUUID())
                 .entityType("COM")
                 .entityName("My Company").build();
         testService.printGenericParam(objEntity);

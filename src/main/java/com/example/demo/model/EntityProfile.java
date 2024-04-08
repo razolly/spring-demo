@@ -26,12 +26,15 @@ public class EntityProfile {
 
     private String entityType;
 
-    /*
-    * In `mappedBy = "entityProfile"` entityProfile is the name of the parent field on the child entity
-    *       From "Hibernate in action" - You also have to set the mappedBy parameter. The argument is the name of the property on the “other side.”
-    * `mappedBy` tells Hibernate to “load this collection (employees) using the foreign key column already mapped by the given property (entityProfile in EmployeeProfile.java)”
-    */
-    @OneToMany(mappedBy = "entityProfile", fetch = FetchType.LAZY)
+    /**
+     * This is a uni-directional @OneToMany mapping. The entityProfile (parent) has a reference to
+     * EmployeeProfile (child). But the child does not have a reference to the parent.
+     * <p>
+     * Note that this field (entity_profile_id) does not exist in EmployeeProfile.java. However, it is actually created
+     * by this @JoinColumn annotation. This column works in `insert_entity_profile.sql`.
+     */
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "entity_profile_id")
     private List<EmployeeProfile> employees;
 
 }

@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -16,12 +17,14 @@ import java.util.UUID;
 public class EntityProfileDto {
 
     @NotNull
-    private UUID entityId;
+    private UUID id;
 
     @NotBlank
     private String entityName;
 
     @NotBlank
     private String entityType;
+
+    private List<EmployeeProfileDto> employees;
 
 }

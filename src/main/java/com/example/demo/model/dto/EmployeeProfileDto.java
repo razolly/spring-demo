@@ -11,6 +11,4 @@ import java.util.UUID;
 public class EmployeeProfileDto {
     private UUID id;
     private String name;
-    private UUID entityId;
-    private EntityProfileDto entityProfile;
 }

@@ -40,7 +40,7 @@ class EntityServiceTest {
                         .entityName("Merlion Tech").build()));
         EntityProfileDto response = entityService.getEntity(UUID.randomUUID());
         assertNotNull(response);
-        assertEquals("247d338c-df4a-4f37-ac64-ae0ba79eb21b", response.getEntityId().toString());
+        assertEquals("247d338c-df4a-4f37-ac64-ae0ba79eb21b", response.getId().toString());
         assertEquals("Merlion Tech", response.getEntityName());
     }
 
